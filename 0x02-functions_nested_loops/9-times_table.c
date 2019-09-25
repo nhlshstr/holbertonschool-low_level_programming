@@ -31,8 +31,8 @@ void times_table(void)
 			if (pro >= 10)
 			{
 				_putchar((pro / 10) + '0');
-			}	
-				
+			}
+
 				_putchar((pro % 10) + '0');
 				if (b != 9)
 				{
