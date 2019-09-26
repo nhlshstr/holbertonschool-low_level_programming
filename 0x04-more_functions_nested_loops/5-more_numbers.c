@@ -12,7 +12,7 @@ void more_numbers(void)
 	{
 		for (count = 0; count <= 14; count++)
 		{
-			if(count > 9)
+			if (count > 9)
 			{
 				_putchar((count / 10) + '0');
 			}
