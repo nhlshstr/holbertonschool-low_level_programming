@@ -25,7 +25,7 @@ void print_array(int *a, int n)
 		}
 
 		newArr[i] = *(a + i);
-		printf("%d ,", newArr[i]);
+		printf("%d, ", newArr[i]);
 	}
 
 	printf("\n");
