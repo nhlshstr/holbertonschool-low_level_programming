@@ -20,10 +20,8 @@ void print_rev(char *s)
 
 	while (count >= 0)
 	{
-		if (*s != '\0')
-		_putchar(*s);
-		s--;
-		count--;
+		
+
 
 	}
 
