@@ -7,7 +7,9 @@
  * Return: returns the string
  */
 char *string_toupper(char *string)
-{
+{	
+	char *p = string;
+
 	while (*string != '\0')
 	{
 		if (*string >= 'a' && *string <= 'z')
@@ -16,6 +18,6 @@ char *string_toupper(char *string)
 		}
 		string++;
 	}
-	return (string);
+	return (p);
 }
 
