@@ -7,7 +7,7 @@
  * Return: returns the string
  */
 char *string_toupper(char *string)
-{	
+{
 	char *p = string;
 
 	while (*string != '\0')
