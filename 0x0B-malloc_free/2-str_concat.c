@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- *str_concat: concatenates two strings
+ *str_concat - concatenates two strings
  *
  * @s1: first string
  * @s2: second string
@@ -11,14 +11,14 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	int i = 0; 
+	int i = 0;
 	int j = 0;
 	int len1, len2;
 	char *p;
-	
+
 	if (s1 == NULL)
 		s1 = "";
-	if(s1 == NULL)
+	if (s1 == NULL)
 		s2 = "";
 
 	for ( ; s1[i]; i++)
@@ -38,14 +38,14 @@ char *str_concat(char *s1, char *s2)
 
 	for (len1 = 0; len1 < i; len1++)
 	{
-		p[len1] = s1[len1]; 
+		p[len1] = s1[len1];
 	}
-	
-	for(len2 = 0; len2 < j; len2++)
+
+	for (len2 = 0; len2 < j; len2++)
 	{
 		p[len1 + len2] = s2[len2];
 	}
-	
+
 	p[len1 + len2] = '\0';
 
 	return (p);
