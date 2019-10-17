@@ -30,7 +30,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		for (y = 0; y < j; y++)
 			p[x + y] = s2[y];
-		p[n + j] = '\0';
+		p[x + j] = '\0';
 	}
 	else
 	{
