@@ -6,7 +6,7 @@
  *@max: max. value passed
  *
  *Return: NULL if min > max or if malloc fails
- *		pointer otherwwise 
+ *		pointer otherwwise
  */
 int *array_range(int min, int max)
 {
