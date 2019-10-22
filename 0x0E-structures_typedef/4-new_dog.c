@@ -5,7 +5,7 @@
 /**
  * _strlen - Returns length
  * @s: string
- * Return: string length 
+ * Return: string length
  */
 int _strlen(char *s)
 {
@@ -20,7 +20,7 @@ int _strlen(char *s)
 }
 /**
  * _strcpy - copies string
- * @dest: destination 
+ * @dest: destination
  * @src: source string
  * Return: Pointer to dest
  */
