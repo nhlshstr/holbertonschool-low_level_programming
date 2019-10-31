@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- *print_list - prints the contents of the LL
+ *list_len - returns the length of the LL
  *
  * @h: Pointer to the LL (first element)
  *
