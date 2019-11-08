@@ -9,10 +9,10 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned int mask;
-	unsigned int a = m ^ n;
+	unsigned long int mask;
+	unsigned long int a = m ^ n;
 	int count = 0;
-
+	
 	for (mask = 1; mask != 0; mask <<= 1)
 	{
 		if (a & mask)
