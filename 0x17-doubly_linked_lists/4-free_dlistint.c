@@ -4,7 +4,7 @@
  * @head: pointer to first node in DLL
  */
 void free_dlistint(dlistint_t *head)
-{	
+{
 	if (head == NULL)
 		return;
 
