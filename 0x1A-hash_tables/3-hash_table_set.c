@@ -1,55 +1,59 @@
 #include "hash_tables.h"
+
 /**
- * hash_table_set - Adds an element to hash table
- * @ht: Hash table
- * @key: Key
- * @value: Value
+ * hash_table_set - Add element
+ * @ht: hash table
+ * @key: key
+ * @value: value
  *
- * Return: 1 on success, 0 on failure.
+ * Return: 1 if successful, 0 otherwise
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *add = malloc(sizeof(hash_node_t));
 
-	if (add == NULL)
+	if (!add)
 		return (0);
 
-	if (ht == NULL || key == NULL)
+	if (!ht || !key)
 		return (0);
 
 	add->key = strdup(key);
-	if (add->key == NULL)
+
+	if (!(add->key))
 	{
 		free(add);
 		return (0);
 	}
 
 	add->value = strdup(value);
-	if (add->value == NULL)
+
+	if (!(add->value))
 	{
-		free(add->key);
 		free(add);
+		free(add->key);
 		return (0);
 	}
 
 	node_assign(add, ht);
 	return (1);
 }
+
 /**
- * node_assign - Adds a node
- * @h: Pointer to hash table
- * @n: Node to be added
+ * node_assign - Add the node to the hash table
+ * @h: hash table
+ * @n: node
  */
 void node_assign(hash_node_t *n, hash_table_t *h)
 {
-	unsigned long int i = 0;
-	hash_node_t *t = h->array[i];
+	unsigned long int i;
+	hash_node_t *t = NULL;
 
-	i = key_index((const unsigned char *)n->key, h->size);
+	i = key_index((unsigned char *)n->key, h->size);
 	t = h->array[i];
 
-	if (h->array)
-	{	
+	if (h->array[i])
+	{
 		t = h->array[i];
 		while (t)
 		{
@@ -58,7 +62,8 @@ void node_assign(hash_node_t *n, hash_table_t *h)
 			t = t->next;
 		}
 		if (t)
-		{	free(t->value);
+		{
+			free(t->value);
 			t->value = strdup(n->value);
 			free(n->value);
 			free(n->key);
@@ -66,7 +71,7 @@ void node_assign(hash_node_t *n, hash_table_t *h)
 		}
 		else
 		{
-			n = h->array[i];
+			n->next = h->array[i];
 			h->array[i] = n;
 		}
 	}
