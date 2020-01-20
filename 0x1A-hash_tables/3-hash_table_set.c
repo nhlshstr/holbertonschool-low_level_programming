@@ -1,29 +1,29 @@
 #include "hash_tables.h"
 /**
- * has_table_set - Adds an element to hash table
+ * hash_table_set - Adds an element to hash table
  * @ht: Hash table
  * @key: Key
- * @value: Value 
+ * @value: Value
  *
  * Return: 1 on success, 0 on failure.
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *add = malloc(sizeof(hash_node_t));
-	
-	if(add == NULL)
+
+	if (add == NULL)
 		return (0);
 
-	if(ht == NULL || key == NULL)
+	if (ht == NULL || key == NULL)
 		return (0);
-	
+
 	add->key = strdup(key);
-	if(add->key == NULL)
+	if (add->key == NULL)
 	{
 		free(add);
 		return (0);
 	}
-	
+
 	add->value = strdup(value);
 	if (add->value == NULL)
 	{
@@ -53,7 +53,7 @@ void node_assign(hash_node_t *n, hash_table_t *h)
 		while (t != NULL)
 		{
 			if (strcmp(t->key, n->key) == 0)
-					break;
+				break;
 			t = t->next;
 		}
 		if (t)
