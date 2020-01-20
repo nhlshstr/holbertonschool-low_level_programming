@@ -48,9 +48,9 @@ void node_assign(hash_node_t *n, hash_table_t *h)
 	i = key_index((const unsigned char *)n->key, h->size);
 	t = h->array[i];
 
-	if (h->array != NULL)
+	if (h->array)
 	{
-		while (t != NULL)
+		while (t)
 		{
 			if (strcmp(t->key, n->key) == 0)
 				break;
