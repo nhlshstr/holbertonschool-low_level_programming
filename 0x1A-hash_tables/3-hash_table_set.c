@@ -49,7 +49,8 @@ void node_assign(hash_node_t *n, hash_table_t *h)
 	t = h->array[i];
 
 	if (h->array)
-	{
+	{	
+		t = h->array[i];
 		while (t)
 		{
 			if (strcmp(t->key, n->key) == 0)
@@ -57,7 +58,7 @@ void node_assign(hash_node_t *n, hash_table_t *h)
 			t = t->next;
 		}
 		if (t)
-		{
+		{	free(t->value);
 			t->value = strdup(n->value);
 			free(n->value);
 			free(n->key);
@@ -65,13 +66,13 @@ void node_assign(hash_node_t *n, hash_table_t *h)
 		}
 		else
 		{
-			t = h->array[i];
-			h->array[i] = t;
+			n = h->array[i];
+			h->array[i] = n;
 		}
 	}
 	else
 	{
-		t->next = NULL;
-		h->array[i] = t;
+		n->next = NULL;
+		h->array[i] = n;
 	}
 }
