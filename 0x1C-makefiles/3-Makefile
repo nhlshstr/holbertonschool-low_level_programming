@@ -15,3 +15,5 @@ fclean  :
 re  : oclean all
 main.o : main.c
 	gcc -c -o main.o main.c
+holberton.o : holberton.c
+	gcc -c -o holberton.o holberton.c
