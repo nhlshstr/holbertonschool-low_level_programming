@@ -4,7 +4,7 @@ NAME = holberton
 OBJ = $(SRC:.c=.o)
 RM = rm -f
 
-all  : $(OBJ) 
+all  : $(OBJ) m.h 
 	$(CC) $(OBJ) -o $(NAME)
 clean  :
 	$(RM) *~ .*.sw* $(NAME)
