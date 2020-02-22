@@ -6,13 +6,12 @@ RM = rm -f
 
 all  : $(OBJ) 
 	$(CC) $(OBJ) -o $(NAME)
-clean  : $(OBJ)
-	$(RM) *~ $(NAME)
-oclean  : $(OBJ)
+clean  :
+	$(RM) *~ .*.sw* $(NAME)
+oclean  :
 	$(RM) $(OBJ)
-fclean  : $(OBJ)
-	$(RM) *~ $(OBJ)
-re  : $(OBJ)
-	$(RM) $(OBJ)
+fclean  :
+	$(RM) *~ $(OBJ) $(NAME)
+re  : oclean all
 main.o : main.c
 	gcc -c -o main.o main.c
