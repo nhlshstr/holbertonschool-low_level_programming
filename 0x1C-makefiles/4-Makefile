@@ -1,0 +1,21 @@
+CFLAGS = -Wall -Werror -Wextra -pedantic
+CC = gcc $(CFLAGS)
+SRC = main.c holberton.c
+NAME = holberton
+OBJ = $(SRC:.c=.o)
+RM = rm -f
+
+.PHONY : all
+all : $(OBJ) m.h 
+	$(CC) $(OBJ) -o $(NAME)
+.PHONY : clean
+clean :
+	$(RM) $(wildcard *~) $(wildcard *.swp) $(NAME)
+.PHONY : oclean
+oclean :
+	$(RM) $(OBJ)
+.PHONY : fclean
+fclean :
+	$(RM) $(wildcard *~) $(OBJ) $(NAME)
+.PHONY : re
+re : oclean all
