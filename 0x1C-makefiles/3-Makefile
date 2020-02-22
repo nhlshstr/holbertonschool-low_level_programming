@@ -4,18 +4,17 @@ NAME = holberton
 OBJ = $(SRC:.c=.o)
 RM = rm -f
 
-.PHONY : re all clean oclean fclean
-
+.PHONY : all
 all : $(OBJ) m.h 
 	$(CC) $(OBJ) -o $(NAME)
+.PHONY : clean
 clean :
-	$(RM) $(wildcard *~) $(wildcard .swp) $(NAME)
+	$(RM) $(wildcard *~) $(wildcard *.swp) $(NAME)
+.PHONY : oclean
 oclean :
 	$(RM) $(OBJ)
+.PHONY : fclean
 fclean :
 	$(RM) $(wildcard *~) $(OBJ) $(NAME)
+.PHONY : re
 re : oclean all
-main.o : main.c
-	gcc -c -o main.o main.c
-holberton.o : holberton.c
-	gcc -c -o holberton.o holberton.c
