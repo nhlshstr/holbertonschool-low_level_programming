@@ -1,4 +1,4 @@
-CC = gcc
+CC = gcc $(CFLAGS)
 SRC = main.c holberton.c
 NAME = holberton
 OBJ = $(SRC:.c=.o)
