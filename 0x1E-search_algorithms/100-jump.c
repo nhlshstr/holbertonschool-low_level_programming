@@ -1,5 +1,4 @@
 #include "search_algos.h"
-#include <math.h>
 /**
  * jump_search - Performs jump search
  * @array: Array passed to the function
@@ -15,7 +14,7 @@ int jump_search(int *array, size_t size, int value)
 	if (!array)
 		return (-1);
 
-	step = (size_t) floor(sqrt(size));
+	step = sqrt(size);
 
 	for (cur = 0; value > array[cur] && cur < (int) size; cur += step)
 		printf("Value checked array[%d] = [%d]\n", cur, array[cur]);
