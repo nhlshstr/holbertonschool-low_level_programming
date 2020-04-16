@@ -9,9 +9,7 @@
  */
 int jump_search(int *array, size_t size, int value)
 {
-	int step = 0,
-	       cur = 0,
-	       j = 0;
+	int step = 0, cur = 0, j = 0;
 
 	if (!array)
 		return (-1);
