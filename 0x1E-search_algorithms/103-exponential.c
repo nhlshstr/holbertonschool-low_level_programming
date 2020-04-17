@@ -41,7 +41,8 @@ int binary_search_4exp(int *array, int value, int low, int high)
 	if (!array)
 		return (-1);
 
-	for (; low <= high;)
+
+	while (low <= high)
 	{
 
 		printf("Searching in array: ");
@@ -58,12 +59,12 @@ int binary_search_4exp(int *array, int value, int low, int high)
 
 		mid = (high + low) / 2;
 
-		if (array[mid] == value)
-			return (mid);
+		if (value > array[mid])
+			low = mid + 1;
 		else if (value < array[mid])
-			high = array[mid - 1];
+			high = mid - 1;
 		else
-			low = array[mid + 1];
+			return (mid);
 	}
 
 	return (-1);
