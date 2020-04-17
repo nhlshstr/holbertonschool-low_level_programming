@@ -29,7 +29,6 @@ int advanced_binary(int *array, size_t size, int value)
 int rec_bs_helper(int *arr, int low, int high, int value, int result)
 {
 	int mid = low + (high - low) / 2;
-
 	if (high >= low)
 	{
 		array_printer(arr, low, high);
@@ -45,8 +44,6 @@ int rec_bs_helper(int *arr, int low, int high, int value, int result)
 		}
 
 	}
-
-
 	return (result);
 }
 /**
