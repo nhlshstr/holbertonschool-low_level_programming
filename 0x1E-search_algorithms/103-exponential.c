@@ -19,15 +19,16 @@ int exponential_search(int *array, size_t size, int value)
 		printf("Value checked array[%d] = [%d]\n", i, array[i]);
 	cap = __min(i, size - 1);
 	printf("Value found between indexes [%d] and [%d]\n", i / 2, cap);
-	ret = binary_search_4exp(array, value, i/2, cap);
+	ret = binary_search_4exp(array, value, i / 2, cap);
 
 	return (ret);
 
 }
 /**
- * binary_search - Performs Binary Search
+ * binary_search_4exp - Performs Binary Search
  * @array: Array that is passed
- * @size: Size of the array
+ * @low: Lowest value
+ * @high: Highest value
  * @value: Value being searched for
  *
  * Return: Index on success, -1 o/w
